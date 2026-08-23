@@ -1,0 +1,28 @@
+# cache files
+local_only
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+# translate files
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*.egg-info/
+# anaconda files
+.idea/
+.spyderproject/
+.spyproject/
+environment.yml
+# system files
+.DS_Store
+Thumbs.db
+# log and temp files
+*.log
+*.tmp
+*.swp
+*.swo
+# vs code
+.vscode/  
