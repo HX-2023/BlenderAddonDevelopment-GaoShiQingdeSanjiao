@@ -1,3 +1,3 @@
-[submodule "path/to/private-lib"]
-	path = path/to/private-lib
+[submodule "private-lib"]
+	path = private-lib
 	url = git@github.com:HX-2023/Blender-API-Brief-Introduce.git
