@@ -50,7 +50,7 @@ class ObjectProperties(PropertyGroup):
     # Object.myInt = bpy.props.IntProperty(name='Intest', min=1, max=10, default=5)
     myInt: bpy.props.IntProperty(name='Intest', min=1, max=10, default=5) # type: ignore
     # Object.myFloat = bpy.props.FloatProperty(name='Floatest', min=1, max=10, default=0.1)
-    myFloat: bpy.props.FloatProperty(name='Floatest', min=1, max=10, default=0.1) # type: ignore
+    myFloat: bpy.props.FloatProperty(name='Floatest', min=1.0, max=10.0, default=0.1) # type: ignore
     # Object.myString = bpy.props.StringProperty(name='Strest', default='Hello Xworld!', maxlen=30)
     myString: bpy.props.StringProperty(name='Strest', default='Hello Xworld!', maxlen=30) # type: ignore
     # Object.myBoolean = bpy.props.BoolProperty(name='Boolest', default=True)
@@ -59,7 +59,7 @@ class ObjectProperties(PropertyGroup):
 
 class MeshProperties(PropertyGroup):
     MeshInt: bpy.props.IntProperty(name='MeshIntest', min=1, max=10, default=5) # type: ignore
-    MeshFloat: bpy.props.FloatProperty(name='MeshFloatest', min=1, max=10, default=0.1) # type: ignore
+    MeshFloat: bpy.props.FloatProperty(name='MeshFloatest', min=1.0, max=10.0, default=0.1) # type: ignore
     MeshString: bpy.props.StringProperty(name='MeshStrest', default='Hello Blender', maxlen=30) # type: ignore
     MeshBool: bpy.props.BoolProperty(name='MeshBoolest', default=False) # type: ignore
     
