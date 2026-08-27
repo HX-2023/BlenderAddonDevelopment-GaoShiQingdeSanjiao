@@ -1,47 +1,33 @@
-from multiprocessing import context
-
 import bpy
-from bpy.types import Object, PropertyGroup
+from bpy.types import Object, PropertyGroup, Panel
 from bpy.props import StringProperty, IntProperty, BoolProperty, CollectionProperty
 
 
 class Demo(PropertyGroup):
-    nickname: StringProperty(default='') # type: ignore
-    age: IntProperty(default=3) # type: ignore
-    isfemale: BoolProperty(default=True) # type: ignore
+    name: StringProperty(name='name_id', default='') # type: ignore
+    age: IntProperty(name='age_id', default=3) # type: ignore
+    isfemale: BoolProperty(name='isfemale_id', default=True) # type: ignore
+
+bpy.utils.register_class(Demo)
+Object.custom_prop = CollectionProperty(type=Demo)
+
+obj = bpy.data.objects[1]
+collection_prop = obj.custom_prop.add()
+
+collection_prop.name = 'Steven'
+collection_prop.age = 17
+collection_prop.isfemale = False
+
+print(collection_prop.name, collection_prop.age, collection_prop.isfemale)
 
 
-class Demo_1():
-    def add_func(self, data):
-        all_objects = {
-        'nickname': ['Susan', 'Tom'],
-        'age': [6, 9],
-        'isfemale': [True, False]
-        }
-        obj = data.objects
-
-        for obj in obj.prop:
-            for i, obj in enumerate(obj[0:len(obj)]):
-                obj.prop.nickname = all_objects['nickname'][i]
-                obj.prop.age = all_objects['age'][i]
-                obj.prop.isfemale = all_objects['isfemale'][i]
-                print(obj.prop.add(obj.prop.nickname, obj.prop.age, obj.prop.isfemale))
+# bpy_prop_collection_idprop.add() # this is a function in Blender to add a new item to a collection
 
 
-def register():
-    bpy.utils.register_class(Demo)
-    bpy.utils.register_class(Demo_1)
-    Object.prop = CollectionProperty(type=Demo)
-
-def unregister():
-    del Object.prop
-    bpy.utils.unregister_class(Demo)
-    bpy.utils.unregister_class(Demo_1)
-
-
-def main():
-    register
-    # unregister()
-
-
-main()
+ 
+        
+# for i, all_objects in enumerate(obj[0:len(obj)]):
+#     obj.x = all_objects['name_id'][i]
+#     obj.y = all_objects['age_id'][i]
+#     obj.z = all_objects['isfemale_id'][i]
+#     print(obj.x, obj.y, obj.z)

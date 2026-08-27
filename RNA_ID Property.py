@@ -124,6 +124,7 @@ def unregister():
 def main():
     register()
     #unregister()
+    
     print(Panel.bl_rna.properties['bl_space_type'].enum_items.keys()) # ['EMPTY', 'VIEW_3D', 'IMAGE_EDITOR', 'NODE_EDITOR', 'SEQUENCE_EDITOR', 'CLIP_EDITOR', 'DOPESHEET_EDITOR', 'GRAPH_EDITOR', 'NLA_EDITOR', 'TEXT_EDITOR', 'CONSOLE', 'INFO', 'TOPBAR', 'STATUSBAR', 'OUTLINER', 'PROPERTIES', 'FILE_BROWSER', 'SPREADSHEET', 'PREFERENCES']
     
     print(type(MeshProperties)) # <class '_bpy_types._RNAMetaPropGroup'>
